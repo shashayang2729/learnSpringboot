@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.3.0" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=3.2.0" rel="stylesheet">
+    <style>
+        #username,#password,#loginCode{height: 35px;}
+    </style>
+    <script>if(window.top !== window.self){ window.top.location = window.location;}</script>
+</head>
+
+<body class="bt_login_bgcolor" >
+<div class="middle-box text-center loginscreen  animated fadeInDown">
+    <div class="bt_login_boxs">
+        <div>
+            <img src="img/206_112.png">
+        </div>
+        <form class="m-t my-form" role="form" action="login" method="post">
+            <span class="text-danger"><p align="left" th:text="${usernameMsg}"></p></span>
+            <div class="form-group bt_login_inputs">
+                <input id="username" name="username" type="text" class="form-control" placeholder="用户名" required>
+            </div>
+            <div class="form-group bt_login_inputs">
+                <input id="password" name="password" type="password" class="form-control" placeholder="密码" required >
+            </div>
+            <span class="text-danger"><p align="left" th:text="${loginCodeMsg}"></p></span>
+            <div class="form-group bt_login_inputs" >
+                <input id="loginCode" name="loginCode" type="text" class="form-control" placeholder="验证码" required style="width:50%;float:left">
+                <img id="checkImg" alt="验证码" onclick="changeCode();" style="width:50%;height:34px" src="LoginCode/getLoginCode"><br>
+            </div>
+            <button id="J-submit" type="submit"   class="btn btn-primary block full-width bt_login_bnt">登录</button>
+            <p id="J-error" class="text-muted bt_text_center"></p>
+        </form>
+    </div>
+</div>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/bootstrap.min.js?v=3.4.0"></script>
+<script>
+    function changeCode(){
+        var t = new Date().getTime();
+        document.getElementById("checkImg").setAttribute("src", "LoginCode/getLoginCode?t="+t);
+    }
+</script>
+</body>
+</html>
