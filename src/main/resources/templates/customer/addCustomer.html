@@ -1,0 +1,21 @@
+<html>
+用户名：<input type="text" id="username" name="username">
+<input type="button" value="新增" onclick="add();">
+<div id="loading"></div>
+</html>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script>
+    function add(){
+        alert("username:"+$("#username").val());
+        $.ajax({
+            url:"/addCustomer?username="+$("#username").val(),
+            type:"post",
+            async:false,
+
+            success:function(data){
+                alert(data);
+            }
+
+        })
+    }
+</script>

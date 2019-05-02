@@ -3,6 +3,7 @@ package com.example.learnspringboot.entity;
 public class UserEntity {
     private Integer id;
     private String userName;
+    private Integer age;
 
     public Integer getId() {
         return id;
@@ -18,5 +19,13 @@ public class UserEntity {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 }

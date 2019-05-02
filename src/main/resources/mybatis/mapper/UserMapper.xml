@@ -27,6 +27,11 @@
         WHERE username=#{username}
     </select>
 
+    <insert id="addCustomer" parameterType="com.example.learnspringboot.entity.UserEntity" >
+        insert into t_userinfo (username)
+        values(#{userName})
+    </insert>
+
     <!--  <insert id="insert" parameterType="com.neo.entity.UserEntity" >
           INSERT INTO
           users

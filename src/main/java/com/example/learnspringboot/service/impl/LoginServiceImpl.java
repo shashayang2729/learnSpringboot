@@ -20,4 +20,13 @@ public class LoginServiceImpl implements LoginService {
         System.out.println(userEntity.getId()+"==="+userEntity.getUserName());
         return null;
     }
+
+    @Override
+    public void addCustomer(String username) {
+        UserEntity ue = new UserEntity();
+        ue.setUserName(username);
+        userMapper.addCustomer(ue);
+    }
+
+
 }
