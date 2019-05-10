@@ -1,16 +1,18 @@
 #mybatis.config-location=classpath:mybatis/mybatis-config.xml
 #mybatis.mapper-locations=classpath:mybatis/mapper/*.xml
 #server.port=8083
+
 server:
   port: 8083
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.example.learnspringboot.entity
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/mytestdb?useUnicode=true&characterEncoding=utf8
     username: root
-    password: 'root'
+    password: '123456'
   thymeleaf:
     cache: false

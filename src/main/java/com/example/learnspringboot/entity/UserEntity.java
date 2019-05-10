@@ -1,5 +1,9 @@
 package com.example.learnspringboot.entity;
 
+import org.apache.ibatis.type.Alias;
+
+//这个注解可加可不加
+@Alias("userEntity")
 public class UserEntity {
     private Integer id;
     private String userName;
